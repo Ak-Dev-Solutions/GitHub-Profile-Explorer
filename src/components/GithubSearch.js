@@ -20,15 +20,15 @@ const GithubSearch = () => {
             setError(null);
         } catch(error) {
             setProfile(null);
-            setError('User Not Found');
+            setError('No results. Please enter a valid GitHub username.');
         }
     };
   return (
     <div className='main-container'>
       <h1 className='main-heading'>GitHub Profile Explorer</h1>
       <form onSubmit={handleSubmit} className='search-form'>
-        <input type='text' placeholder='Enter Github Username....' value={username} className='search-input' onChange={(e) => setUsername(e.target.value)}></input>
-        <button type='submit' className='search-btn'>Search</button>
+        <input type='text' placeholder='Enter username to explore....' value={username} className='search-input' onChange={(e) => setUsername(e.target.value)}></input>
+        <button type='submit' className='search-btn'>Get Profile</button>
       </form>
 
       {error && <p className='error-msg'>{error}</p>}
